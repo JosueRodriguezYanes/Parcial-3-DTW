@@ -10,7 +10,6 @@ use App\Http\Controllers\Backend\Configuracion\ConfiguracionController;
 use App\Http\Controllers\Backend\Registro\RegistroController;
 
 
-
 use App\Http\Controllers\Backend\Dashboard\DashboardController;
 
 
@@ -57,4 +56,12 @@ Route::get('sin-permisos', [ControlController::class,'indexSinPermiso'])->name('
 
 Route::get('/admin/dashboard', [DashboardController::class,'vistaDashboard'])->name('admin.dashboard.index');
 
+// ---Nuevas rutas ---
 
+Route::get('/apis', function () {
+    return view('backend.admin.dashboard.apis');
+})->name('apis');
+
+Route::get('/workers', function () {
+    return view('backend.admin.dashboard.workers');
+})->name('workers');
