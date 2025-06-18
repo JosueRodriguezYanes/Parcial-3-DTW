@@ -65,3 +65,10 @@ Route::get('/apis', function () {
 Route::get('/workers', function () {
     return view('backend.admin.dashboard.workers');
 })->name('workers');
+
+
+
+
+Route::get('/workers', function () {
+    return view('frontend.login.workers');
+})->name('workers');
