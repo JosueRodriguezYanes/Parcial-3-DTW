@@ -1,66 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
+  <h1>🚀 Parcial3-DTW135</h1>
+</div>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
 </p>
 
-## About Laravel
+## 📋 Tabla de Contenidos
+- [Configuración Inicial](#-configuración-inicial)
+- [Requisitos Previos](#-requisitos-previos)
+- [Instalación](#-instalación)
+- [APIS´s usadas](#-API´s-usadas)
+- [Web Workers](#-Web-Workers)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🛠 Configuración Inicial
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Para ejecutar este proyecto localmente, sigue estos pasos cuidadosamente.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### ⚡ Requisitos Previos
 
-## Learning Laravel
+- PHP >= 8.0
+- Composer
+- MySQL
+- Una base de datos MySQL creada para el proyecto
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 📥 Instalación
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Clonar el repositorio**
+   ```bash
+   git clone [url-del-repositorio]
+   cd Parcial-3-DTW
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. **Configurar el archivo .env**
+   - Localiza el archivo `.env` en la raíz del proyecto
+   - Busca la siguiente línea:
+     ```env
+     DB_PASSWORD=
+     ```
+   - Reemplaza el valor con tu contraseña de MySQL:
+     ```env
+     DB_PASSWORD=tu_contraseña
+     ```
 
-## Laravel Sponsors
+   > ⚠️ **Importante**: Asegúrate de que la base de datos esté creada y coincida con las especificaciones del proyecto.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. **Instalar dependencias**
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+4. **Generar clave de aplicación**
+   ```bash
+   php artisan key:generate
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+5. **Ejecutar migraciones**
+   ```bash
+   php artisan migrate
+   ```
 
-## Contributing
+## 🔴 API´s usadas
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### API de Geolocalización
 
-## Code of Conduct
+Con la implementación de esta API, el usuario podra ver la altitud y latitud en un mapa interactivo, capaz de acercar y alejar.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### API de Video
 
-## Security Vulnerabilities
+Con la implementación de esta API, el usuario puede visualizar videos, ya sea cargados por medio de una URL o por medio de la carga de un archivo de video local, de igual manera, el usuario puede reproducir/pausae el video, puede adelantar el video 10 segundos y retroceder el video 10 segundos, además se puede modificar la velocidad en que se reproduce el video, al igual que su volumen.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### API Canva
 
-## License
+Con la implementación de esta API, el usuario posee un lienzo en blanco en el cual puede dibujar, en este caso puede dibujar lineas negras simples, el usuario puede descarga la imagen creada en el lienzo y de igual manera se puede borrar el dibujo en el lienzo
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🛠 Web Workers
+
+### Calcular los números primos hasta X número límite
+
+En este apartado el usuario debe ingresar un número limite, posteriormente la aplicación mostrara los númmeros pares hasta ese límite que el usuario escribio.
+
+## 👥 Integrantes
+
+| Nombre | Carnet |
+|--------|---------|
+| Alejandra Michelle Mejía Rivas | MR22035 |
+| Josué Daniel Rodriguez Yanes | RY22001 |
+| Ivan Eduardo Lopez Tobar | LT22009 |
+| Christopher Alexis Velasquez Aguilar | VA22020 |
+| Kelvin Antonio Velásquez Vásquez | VV22015 |
